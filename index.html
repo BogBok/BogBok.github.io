@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Incremental</title>
+</head>
+<body>
+    <div id="app">
+        <div class="welcome">Welcome to an Incremental Game</div>
+        <div class="settings">
+            <button @click="saveGame()" class="settings">Save Game</button>
+            <button @click="clearGame()" class="settings">Clear Save</button>
+        </div>
+        <div class="producers-container">
+            <div class="bank-upgrade" id="upbank1">
+                Upgrade intrest rate: <br>
+                ${{format(player.upintrest)}} <br>
+                <button id="upintrestbtn" @click="upgradeintrest">Buy 1</button>
+            </div>
+            <div class="bank">
+                Bank Amount: ${{format(player.deposit)}} <br>
+                <button @click="deposit10per">Deposit 10%</button>
+                <button @click="deposit50per">Deposit 50%</button>
+                <button @click="depositmaxper">Deposit Max</button> <br>
+                <button @click="withdraw10per">Withdraw 10%</button>
+                <button @click="withdraw50per">Withdraw 50%</button>
+                <button @click="withdrawmaxper">Withdraw Max</button> <br>
+                Intrest Rate {{format(player.intrestrate)}}% <br>
+                Intrest in {{player.timer.toFixed(1)}} seconds
+            </div>
+            <div class="bank-upgrade" id="upbank2">
+                Upgrade timer speed: <br>
+                ${{format(player.uptimer)}} <br>
+                <button @click="upgradethetimer">Buy 1</button>
+            </div>
+        </div>
+        <div class="currency-container">
+            <div class="marketing-currency">
+                You have ${{format(player.money)}}
+            </div>
+            <div class="artist-currency" id="gems-unlocked">
+                You have {{format(player.gems)}} Gems
+            </div>
+            <div class="infinity-currency" id="inf-unlocked">
+                You have {{format(player.gems)}} Infinity Points
+            </div>
+        </div>
+        <div class="producers-container">
+            <div class="generators-container">
+                <div class="generator marketing-generator" v-for="(marketing , idx) in player.marketing">
+                    Amount: {{format(marketing.amount)}}<br>
+                    x{{format(marketing.mult)}}<br>
+                    Cost: ${{format(marketing.cost)}}<br>
+                    Bought: {{marketing.bought}}<br>
+                    <button @click="buyMarketingGenerator(idx)">Buy 1</button>
+                </div>
+            </div>
+            <div class="generators-container">
+                <div class="generator artist-generator" v-for="(artists , idx) in player.artists">
+                    Amount: {{format(artists.amount)}}<br>
+                    x{{format(artists.mult)}}<br>
+                    Cost: {{format(artists.cost)}} Gems<br>
+                    Bought: {{artists.bought}}<br>
+                    <button @click="buyArtistsGenerator(idx)">Buy 1</button>
+                </div>
+            </div>
+            <div class="generators-container">
+                <div class="generator inf-generator" v-for="(inf , idx) in player.inf">
+                    Amount: {{format(inf.amount)}}<br>
+                    x{{format(inf.mult)}}<br>
+                    Cost: {{format(inf.cost)}} Infinity Points<br>
+                    Bought: {{inf.bought}}<br>
+                    <button @click="buyInfGenerator(idx)">Buy 1</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/player.js"></script>
+<script src="js/loop.js"></script>
+<script src="js/format.js"></script>
+<script src="js/save.js"></script>
+<script src="js/index.js"></script>
+</html>
