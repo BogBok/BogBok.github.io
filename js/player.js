@@ -8,7 +8,7 @@ var player = {
     money: 10,
     deposit: 0,
     gems: 10,
-    infpoints: 1,
+    infpoints: 10,
     marketing: [],
     artists: [],
     inf: [],
@@ -57,14 +57,14 @@ var thirdGem = {
     bought: 0
 }
 var firstInfinity = {
-    cost: 1,
+    cost: 10,
     multincrease: 1,
     mult: 1,
     amount: 0,
     bought: 0
 }
 var secondInfinity = {
-    cost: 100,
+    cost: 1000,
     multincrease: 1,
     mult: 1,
     amount: 0,
