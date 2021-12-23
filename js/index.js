@@ -18,19 +18,19 @@ var app = new Vue({
             this.player.inf[i].amount += 1
             this.player.inf[i].bought += 1
             if (this.player.inf[i].bought === 10) {
-                this.player.inf[i].multincrease  += 4
+                this.player.inf[i].multincrease  += 3
             }
             if (this.player.inf[i].bought === 25) {
-                this.player.inf[i].multincrease  += 10
+                this.player.inf[i].multincrease  += 6
             }
             if (this.player.inf[i].bought === 100) {
-                this.player.inf[i].multincrease += 25
+                this.player.inf[i].multincrease += 10
             }
             if (this.player.inf[i].bought === 250) {
-                this.player.inf[i].multincrease  += 60
+                this.player.inf[i].multincrease  += 20
             }
             if (this.player.inf[i].bought === 1000) {
-                this.player.inf[i].multincrease  += 150
+                this.player.inf[i].multincrease  += 30
             }
         },
         buyArtistsGenerator(i) {
@@ -47,19 +47,19 @@ var app = new Vue({
             this.player.artists[i].amount += 1
             this.player.artists[i].bought += 1
             if (this.player.artists[i].bought === 10) {
-                this.player.artists[i].multincrease  += 3
+                this.player.artists[i].multincrease  += 2
             }
             if (this.player.artists[i].bought === 25) {
-                this.player.artists[i].multincrease  += 6
+                this.player.artists[i].multincrease  += 2
             }
             if (this.player.artists[i].bought === 100) {
-                this.player.artists[i].multincrease += 10
+                this.player.artists[i].multincrease += 2
             }
             if (this.player.artists[i].bought === 250) {
-                this.player.artists[i].multincrease  += 30
+                this.player.artists[i].multincrease  += 3
             }
             if (this.player.artists[i].bought === 1000) {
-                this.player.artists[i].multincrease  += 75
+                this.player.artists[i].multincrease  += 5
             }
         },
         buyMarketingGenerator(i) {
@@ -79,16 +79,16 @@ var app = new Vue({
                 this.player.marketing[i].multincrease += 1
             }
             if (this.player.marketing[i].bought === 25) {
-                this.player.marketing[i].multincrease += 2
+                this.player.marketing[i].multincrease += 1
             }
             if (this.player.marketing[i].bought === 100) {
-                this.player.marketing[i].multincrease += 3
+                this.player.marketing[i].multincrease += 2
             }
             if (this.player.marketing[i].bought === 250) {
-                this.player.marketing[i].multincrease += 3
+                this.player.marketing[i].multincrease += 2
             }
             if (this.player.marketing[i].bought === 1000) {
-                this.player.marketing[i].multincrease += 5
+                this.player.marketing[i].multincrease += 3
             }
         },
         deposit10per() {
