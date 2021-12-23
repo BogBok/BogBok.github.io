@@ -2,10 +2,24 @@
     box-sizing: border-box;
 }
 
+.game {
+    width: 1000px;
+    height: 875px;
+    margin: auto;
+    border: 1px black;
+}
 #app {
     width: 1000px;
     margin: auto;
     border: 1px solid black;
+}
+
+.howtoplay {
+    margin: auto;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    
 }
 .settings {
     height: 50px;
