@@ -22,7 +22,7 @@ function gameLoop(that) {
         gemsunlock3.style.visibility="hidden";
         gemsunlocked.style.visibility="hidden";
     }
-    if (that.player.money === 1e16 || infBool === true) {
+    if (that.player.money > 1e16 || infBool === true) {
         infunlock.style.visibility="visible"
         infunlock2.style.visibility="visible"
         infunlock3.style.visibility="visible"
