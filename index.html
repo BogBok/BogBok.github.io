@@ -46,7 +46,7 @@
                         You have {{format(player.gems)}} Gems
                     </div>
                     <div class="infinity-currency" id="inf-unlocked">
-                        You have {{format(player.infpoints)}} Moon Stone
+                        You have {{format(player.infpoints)}} Moon Stones
                     </div>
                 </div>
                 <div class="producers-container">
@@ -72,7 +72,7 @@
                         <div class="generator inf-generator" v-for="(inf , idx) in player.inf">
                             Amount Owned: {{format(inf.amount)}}<br>
                             x{{format(inf.mult)}}<br>
-                            Cost: {{format(inf.cost)}} Infinity Points<br>
+                            Cost: {{format(inf.cost)}} Moon Stones<br>
                             Bought: {{inf.bought}}<br>
                             <button @click="buyInfGenerator(idx)">Buy 1</button>
                         </div>
