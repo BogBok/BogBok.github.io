@@ -38,11 +38,11 @@ var app = new Vue({
             if (g.cost > this.player.gems) return
             this.player.gems -= g.cost
             if (i === 0) {
-                this.player.artists[i].cost *= 1.3
+                this.player.artists[i].cost *= 1.25
             } else if (i === 1) {
-                this.player.artists[i].cost *= 1.75
+                this.player.artists[i].cost *= 1.6
             } else if (i === 2) {
-                this.player.artists[i].cost *= 2.2
+                this.player.artists[i].cost *= 1.95
             }
             this.player.artists[i].amount += 1
             this.player.artists[i].bought += 1
