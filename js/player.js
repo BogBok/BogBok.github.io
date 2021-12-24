@@ -50,7 +50,7 @@ var secondGem = {
     bought: 0
 }
 var thirdGem = {
-    cost: 1e5,
+    cost: 10000,
     multincrease: 1,
     mult: 1,
     amount: 0,
@@ -71,7 +71,7 @@ var secondInfinity = {
     bought: 0
 }
 var thirdInfinity = {
-    cost: 1e6,
+    cost: 25000,
     multincrease: 1,
     mult: 1,
     amount: 0,
