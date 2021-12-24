@@ -7,7 +7,7 @@ var app = new Vue({
         buyInfGenerator(i) {
             let g = this.player.inf[i]
             if (g.cost > this.player.infpoints) return
-            this.player.gems -= g.cost
+            this.player.infpoints -= g.cost
             if (i === 0) {
                 this.player.inf[i].cost *= 1.3
             } else if (i === 1) {
