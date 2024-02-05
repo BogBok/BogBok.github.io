@@ -133,20 +133,20 @@ var app = new Vue({
         upgradeintrest() {
             const bankintrest = document.getElementById("upbank1");
             let g = this.player
-            if (player.upintrest > 1e202) return bankintrest.hidden = true
+            if (player.upintrest > 1e188) return bankintrest.hidden = true
             if (g.upintrest > this.player.money) return
             this.player.money -= g.upintrest
             this.player.intrestrate += 4
-            this.player.upintrest *= 100
+            this.player.upintrest *= 75
         },
         upgradethetimer() {
             const banktimer = document.getElementById("upbank2");
             let g = this.player
-            if (player.uptimer > 1e180) return banktimer.hidden = true
+            if (player.uptimer > 1e83) return banktimer.hidden = true
             if (g.uptimer > this.player.money) return
             this.player.money -= g.uptimer
             this.player.timermax -= 1
-            this.player.uptimer *= 1000
+            this.player.uptimer *= 25
             if (this.player.timer > this.player.timermax) {
                 this.player.timer = this.player.timermax
             }
