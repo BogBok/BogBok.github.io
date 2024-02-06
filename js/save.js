@@ -8,6 +8,7 @@ function loadGame() {
     player.money = player1.money
     player.timermax = player1.timermax
     player.timer = player1.timer
+    player.intrestrate = player1.intrestrate
     player.upintrest = player1.upintrest
     player.uptimer = player1.uptimer
     player.money = player1.money
