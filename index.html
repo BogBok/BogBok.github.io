@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h2>
+            <strong>George Shankools Books</strong>
+        </h2>
+    </header>
+    <section>
+        <div class="books", id="border">
+            <div class="book">
+                <input type="image", id="resize", src="Books/FreedomInChrist/Image.png", onclick="loadContent('FreedomInChrist', false)">
+            </div>
+            <div class="book">
+                <input type="image", id="resize", src="Books/NeverTooBroken/Image.png", onclick="loadContent('NeverTooBroken', true)">
+            </div>
+            <div class="book">
+                <input type="image", id="resize", src="Books/Revelation/Image.png", onclick="loadContent('Revelation', true)">
+            </div>
+            <div class="book">
+                <input type="image", id="resize", src="Books/John/Image.png", onclick="loadContent('John', true)">
+            </div>
+            <div class="book">
+                <input type="image", id="resize", src="Books/James/Image.png", onclick="loadContent('James', true)">
+            </div>
+            <div class="book">
+                <input type="image", id="resize", src="Books/Hebrews/Image.png", onclick="loadContent('Hebrews', true)">
+            </div>
+            <div class="book">
+                <input type="image", id="resize", src="Books/Jonah/Image.png", onclick="loadContent('Jonah', true)">
+            </div>
+        </div>
+        <div class="info">
+            <section id="wrap">
+                <div class="topDiv">
+                    <div>
+                        <img src="Books/FreedomInChrist/Image.png", id="image">
+                    </div>
+                    <div class="buttons">
+                        <a id="purchase", href="https://www.amazon.com/True-Freedom-Christ-George-Shankool/dp/B09Z3SPGLV/?_encoding=UTF8&pd_rd_w=BpkZA&content-id=amzn1.sym.0fb2cce1-1ca4-439a-844b-8ad0b1fb77f7&pf_rd_p=0fb2cce1-1ca4-439a-844b-8ad0b1fb77f7&pf_rd_r=146-4811354-8750730&pd_rd_wg=0INnb&pd_rd_r=dd608c57-148e-4c90-9723-7e0da8124b0f&ref_=aufs_ap_sc_dsk">
+                            <button>
+                                <h2>
+                                    Purchase Book
+                                </h2>
+                            </button>
+                        </a>
+                        <a id="pdfLink">
+                            <button id="pdfButton" disabled="disabled">
+                                <h2>
+                                    No PDF Avaliable
+                                </h2>
+                            </button>
+                        </a>
+                        <a id="hide">
+                            <h4>
+                                FreedomInChrist 
+                            </h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="desc", id="description">
+                    If the chaos of 2020, and beyond has taught us anything, it is that we as Americans, and even more so, we as Christian Americans, have taken our Freedoms for granted. Across the entire World we have watched marches, protests, and uprisings in the name of Freedom. We have seen the Fear of Losing Freedoms take over people's entire lives. This desire for Freedom and the debilitating Fear, and consuming power at the thought of losing it, has become a downward spiral in the lives of so many. Government overreach, businesses shut down, marches, and riots for personal Freedoms, social justice, violence, anger, resentment, strife, separation between families, and friends, isolation and so on, and so on... All this chaos has been in the forefront of our minds and shoved down our throats, since spring of 2020.
+                    <p>Now don't get me wrong by my introduction... I'm absolutely 100% an advocate for Freedom. Being a first generation American, and Son of an immigrant who escaped religious persecution in Iraq, I'm ALL for Freedom!</p>
+                    <p>Not to mention the fact that I am the owner of a small family restaurant that endured extreme hardships over nonsensical mandates, Government overreach and shut downs..</p>
+                    <p>With that quick background, I'm sure you could figure out why my Father chose this country...and if you can’t I will spell it out for you, FREEDOM! The freedom of speech, The Freedom of religion, The Freedom to defend yourself, and so much more. It’s the same reason why millions of immigrants flee persecution from around the world, risking their lives for a chance to come to America. But, even with all the Freedom that America offers being the worldly poster child of Freedom, why don't we ever feel like we're Truly Free? And with that being said... What is True Freedom? And why aren't more Christians fighting for it? Well, there's only one way to answer that question…</p>
+                    So, let's get started!!
+                </div>
+            </section>
+        </div>
+    </section>
+ <script>
+    function loadContent(name, avaliable) {
+        const textFile = 'Books/' + name + '/Desc.txt'
+        const imageFile = 'Books/' + name + '/Image.png'
+        const link = 'Books/' + name + '/Link.txt'
+        const pdf = 'Books/' + name + '/Book.pdf'
+        fetch(textFile)
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('description').innerHTML = data
+        });
+        fetch(link)
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('purchase').href = data;
+        });
+        document.getElementById('image').src = imageFile;
+        document.getElementById('hide').innerHTML = "<h4>" + name + "</h4>"
+        if (window.innerWidth > 900) {
+            document.getElementById('image').style.height = '378px';
+            document.getElementById('image').style.width = '252px';
+        } else {
+            document.getElementById('image').style.height = '0px';
+            document.getElementById('image').style.width = '0px';
+        }
+        if (avaliable) {
+            document.getElementById('pdfButton').disabled = ""
+            document.getElementById('pdfButton').innerHTML = "<h2>Free Download</h2>"
+            document.getElementById('pdfLink').setAttribute('download', name + '.pdf')
+            document.getElementById('pdfLink').href = pdf
+        } else {
+            document.getElementById('pdfButton').disabled = "disabled"
+            document.getElementById('pdfButton').innerHTML = "<h2>No PDF Avaliable</h2>"
+        }
+    }
+</script>
+</body>
+</html>

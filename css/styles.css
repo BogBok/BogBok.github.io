@@ -1,0 +1,124 @@
+body {
+    background: rgb(255,251,222);
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+header {
+    background: rgb(8, 107, 104);
+    color: white;
+    padding: 5px 20px;
+}
+
+section {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    height: 50%;
+}
+
+button {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 60%;
+}
+
+button:hover {
+    width: 95%;
+    height: 65%;
+}
+
+#wrap {
+    flex-wrap: wrap;
+}
+
+#resize {
+    height: calc(315px * 0.85);
+    width: calc(210px * 0.85);
+}
+
+#image {
+    height: 378px;
+    width: 252px
+}
+
+#hide {
+        visibility: hidden;
+}
+
+.books {
+    border: 1px solid black;
+    margin: 1% 1%;
+    width: fit-content;
+    max-width: 70%;
+    height: 100%;
+    padding: 1%;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.book {
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 16px;
+    height:fit-content;
+}
+
+.book:hover {
+    transform: scale(1.05);
+}
+
+.info {
+    margin: 1% 0%;
+    padding-right: 1%;
+    min-width: 40%;
+    max-width: 50%;
+}
+
+.desc {
+    border: 1px solid black;
+    margin: 1.5% 1.5%;
+    padding: 20px;
+    
+}
+
+.buttons {
+    margin: 1% 1.5%;
+    padding: 20px;
+    width: 100%
+}
+
+.topDiv {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%
+}
+
+@media (max-width: 900px) {
+    a {
+        height: 33%;
+    }
+    .books {
+        border: 0px;
+    }
+    #image {
+        height: 0px;
+        width: 0px
+    }
+    #hide {
+        visibility: visible;
+    }
+}
